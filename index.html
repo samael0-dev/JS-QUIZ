@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./src/output.css">
+    </head>
+
+    <body>
+      <div class="bg-black text-white italic text-center text-6xl pt-10">JAVASCRIPT QUIZ!</div>
+      <div class="bg-black h-screen text-white content-center">
+        <!--QUIZ BANNER-->
+        <div id="banner" class="visible flex flex-col">
+          <div class="text-[120px] text-center">Test Your JS Skills.</div>
+          <div class="text-center">10 questions covering core JavaScript concepts — from closures to async/await. How well do you really know JS?</div>
+          <button onclick="quizShow();" class="bg-white text-black rounded-3xl p-3 cursor-pointer mt-4 w-[200px] self-center hover:bg-gray-400 duration-500 border-2 border-amber-50">START QUIZ</button>
+        </div>
+
+
+        <div id="quizBanner" class="invisible flex border-4 bg-gray-700 w-[500px] h-[50px] justify-self-center mb-3 rounded-2xl justify-between">
+          <div id="num" class="pl-1.5 content-center flex items-center">
+              Question Number - <div id="qc1">1</div>&nbsp;of 10
+          </div>
+          <div class="content-center flex items-center">
+             Score-<div id="score">0</div>
+          </div>
+          <div id="qc2" class="pr-2 content-center">
+              1
+          </div>
+        </div>
+          <div id="quiz" class="invisible grid grid-cols-2 gap-2 w-[500px] justify-self-center">
+              <div id="question" class="bg-gray-700 text-white col-span-2 text-center h-[60px] rounded-2xl content-center border-4">
+                  What will 'typeof' return in JavaScript? 
+              </div>
+
+              <button id="btn1" onclick="answer=document.getElementById('value1').textContent;
+              select=document.getElementById('btn1');
+              ansActiveColor();
+              visible();" class="flex items-center justify-between bg-gray-700 text-white text-center h-[60px] rounded-2xl border-4 cursor-pointer pr-20 hover:bg-gray-400 active:bg-green-400">
+                <div id="A" class="w-11 ml-3 bg-gray-950 rounded-2xl border-2 ">A</div>
+                  <div id="value1" class="">datatype</div>
+              </button>
+
+              <button id="btn2" onclick="answer=document.getElementById('value2').textContent;
+              select=document.getElementById('btn2');
+              ansActiveColor();
+              visible();" class="flex items-center justify-between bg-gray-700 text-white text-center h-[60px] rounded-2xl border-4 cursor-pointer pr-20 hover:bg-gray-400">
+                <div id="B" class="w-11 ml-3 bg-gray-950 rounded-2xl border-2">B</div>
+                  <div id="value2">text</div>
+              </button>
+              <button id="btn3" onclick="answer=document.getElementById('value3').textContent;
+              select=document.getElementById('btn3');
+              ansActiveColor();
+              visible();" class="flex items-center justify-between bg-gray-700 text-white text-center h-[60px] rounded-2xl border-4 cursor-pointer pr-20 hover:bg-gray-400">
+                <div id="C" class="w-11 ml-3 bg-gray-950 rounded-2xl border-2">C</div>
+                 <div id="value3">null</div>
+              </button>
+
+              <button id="btn4" onclick="answer=document.getElementById('value4').textContent;
+              select=document.getElementById('btn4');
+              ansActiveColor();
+              visible();" class="flex items-center justify-between bg-gray-700 text-white text-center h-[60px] rounded-2xl border-4 cursor-pointer pr-20 hover:bg-gray-400">
+                <div id="D" class="w-11 ml-3 bg-gray-950 rounded-2xl border-2">D</div>
+                 <div id="value4">undefined</div>
+              </button>
+
+          <div id="reason" class="bg-gray-700 mt-3 w-[500px] justify-self-center h-[50px] border-4 rounded-2xl pl-3 text-center col-span-2">
+          </div>
+          <div id="hintQ" class="bg-gray-700 mt-3 w-[500px] justify-self-center h-[50px] border-4 rounded-2xl pl-3 text-center col-span-2 items-center">
+          </div>
+
+          <div class="grid grid-cols-2 col-end-3 justify-items-end">
+            <button onclick="hint();" class="bg-green-500 hover:bg-green-200 rounded-2xl w-[90px] h-[50px] border-3 cursor-pointer mt-3">Hint</button>
+            <button id="submit" onclick="ans();
+            color();
+            setTimeout(questionChange,2000);" class="invisible bg-green-500 hover:bg-green-200 rounded-2xl w-[90px] h-[50px] border-3 cursor-pointer mt-3">
+              Submit
+            </button>
+          </div>
+        </div>
+
+        <!--RESULT PAGE-->
+        <div id="resultPage" class="invisible flex bg-black text-white text-[50px] justify-center items-center">
+          Result:
+          <div id="final"></div><div>&nbsp;out of 10</div>
+        </div>
+      </div>
+      <script type="text/javascript" src="./src/scripts.js"></script>
+    </body>
+</html>
